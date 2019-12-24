@@ -13,7 +13,7 @@ before_install:
   - gcloud auth activate-service-account --key-file travis-service-account.json
   - gcloud config set project datadog-sandbox
   - gcloud config set compute/zone us-east4-c
-  - gcloud container clusters get-credential et-multi-cluster
+  - gcloud container clusters get-credentials et-multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t ethomatos/react-test -f ./client/Dockerfile.dev ./client
 
